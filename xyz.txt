@@ -1,0 +1,442 @@
+Create React App :  npx create-react-app exam
+
+
+install router dom : npm install react-router-dom
+install axios :npm i react-axios
+----------------------------------------------
+Extantion ; react es6 then = rfce
+--------------------------------------------------
+
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
+-------------------------------------------------
+
+
+-----> index.html ------------------------------------------------->
+
+path = public/index.html
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="Script.js"></script>
+    <title>Website</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+----------------------------------------------------------------------------------------------------
+
+App.js--------------------------------------------------------------------
+import React from 'react'
+import Home from './Component/Home'
+import Reg from './Component/Reg'
+
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
+import Service from './Component/Service';
+import Login from './Component/Login';
+import Home2 from './Component/Home2';
+import Countdown from './Component/Countdown';
+
+export default function App() {
+  return (
+    <BrowserRouter>
+    <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/Reg" element={<Reg />} />
+    <Route path="/Service" element={<Service />} />
+    <Route path="/Login" element={<Login />} />
+    <Route path="/Home2" element={<Home2 />} />
+    <Route path="/Countdown" element={<Countdown />} />
+
+
+    </Routes>
+       
+    </BrowserRouter>
+
+  )
+}
+
+--------------------------------------------------------------------------------------------------------------
+---> Home.js-------------------------------------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="Script.js"></script>
+    <title>Website</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+----------------------------------------------------->Reg.js---------------------------->
+import React from 'react'
+import './style.css'
+function Reg() {
+  return (
+    <div>
+       <div className='container border my-5'>
+            <h1>Registration Page</h1>
+            <label>Name</label>
+            <input type='text' className='form-control'/>
+            <label>Email</label>
+            <input type='text' className='form-control'/>
+            <label>Contact</label>
+            <input type='text' className='form-control'/>
+         <button className='btn btn-danger'>Submit</button>
+       </div>
+    </div>
+  )
+}
+
+export default Reg
+
+
+
+--> navbar ----------------------------------------------------------------------------------
+
+<div>
+ <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <div className="container-fluid">
+      <a className="navbar-brand" href="#">Navbar</a>
+      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <li className="nav-item">
+            <a className="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#">Link</a>
+          </li>
+          <li className="nav-item dropdown">
+            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul className="dropdown-menu">
+              <li><a className="dropdown-item" href="#">Action</a></li>
+              <li><a className="dropdown-item" href="#">Another action</a></li>
+              <li><hr className="dropdown-divider" /></li>
+              <li><a className="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <form className="d-flex" role="search">
+          <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+          <button className="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</div>
+
+
+--> service ----------------------------------------------------------------------------------
+
+    <div className='container row '><div class="card" style={{width: "18rem"}}>
+    <img src="..." class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+    
+  </div>
+  <div class="card mx-5" style={{width: "18rem"}}>
+    <img src="..." class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+    
+  </div>
+  <div class="card" style={{width: "18rem"}}>
+    <img src="..." class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+    
+  </div>
+  </div>
+
+
+
+---> Login --------------------------------------------------------------------
+
+import React, { useState } from 'react';
+
+function Login() {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [message, setMessage] = useState('');
+
+    const handleLogin = () => {
+        // Replace 'yourUsername' and 'yourPassword' with your desired username and password.
+        const correctUsername = 'nitin';
+        const correctPassword = '12';
+
+        if (username === correctUsername && password === correctPassword) {
+            setMessage('Login successful');
+            window.location.href='/'
+
+        } 
+        else if(username == "" && password == ""){
+                    alert('Please Fillup form')
+        }
+        else {
+            setMessage('Login failed. Please check your username and password.');
+        }
+    };
+
+    return (
+        <div>
+            <div className="container border my-5 p-5">
+                <h1>Login Page</h1>
+                <label>Username</label>
+                <input
+                    type="text"
+                    className="form-control"
+                    id="name"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                />
+                <label>Password</label>
+                <input
+                    type="password"
+                    className="form-control"
+                    id="pass"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+                <br />
+                <button className="btn btn-danger" onClick={handleLogin}>
+                    Submit
+                </button>
+                <div>{message && <p>{message}</p>}</div>
+            </div>
+        </div>
+    );
+}
+
+export default Login;
+
+--------------------Countdown-------------------------------------
+
+import React, { useState, useEffect } from 'react';
+
+function Countdown() {
+  const [count, setCount] = useState(10); // Initial countdown value in seconds
+  const [isRunning, setIsRunning] = useState(false);
+
+  useEffect(() => {
+    let interval;
+
+    if (isRunning) {
+      interval = setInterval(() => {
+        if (count > 0) {
+          setCount(count - 1);
+        } else {
+          clearInterval(interval);
+          setIsRunning(false);
+        }
+      }, 1000);
+    } else {
+      clearInterval(interval);
+    }
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [count, isRunning]);
+
+  const startCountdown = () => {
+    setIsRunning(true);
+  };
+
+  const pauseCountdown = () => {
+    setIsRunning(false);
+  };
+
+  return (
+    <div>
+      <h1>Countdown Timer</h1>
+      <p>Time remaining: {count} seconds</p>
+      <button onClick={startCountdown} disabled={isRunning}>
+        Start
+      </button>
+      <button onClick={pauseCountdown} disabled={!isRunning}>
+        Pause
+      </button>
+    </div>
+  );
+}
+
+export default Countdown;
+
+
+-------------*-------registration.js---------
+import React, { useState } from 'react';
+
+const RegistrationPage = () => {
+  const initialFormState = {
+    username: '',
+    password: '',
+  };
+
+  const [formValues, setFormValues] = useState(initialFormState);
+  const [registeredUsers, setRegisteredUsers] = useState([]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (formValues.username && formValues.password) {
+      const newUser = {
+        username: formValues.username,
+        password: formValues.password,
+      };
+      setRegisteredUsers([...registeredUsers, newUser]);
+      localStorage.setItem('registeredUsers', JSON.stringify([...registeredUsers, newUser]));
+      setFormValues(initialFormState);
+    }
+  };
+
+  return (
+    <div>
+      <h2>Registration</h2>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Username"
+          name="username"
+          value={formValues.username}
+          onChange={handleChange}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          value={formValues.password}
+          onChange={handleChange}
+        />
+        <button type="submit">Register</button>
+      </form>
+    </div>
+  );
+};
+
+export default RegistrationPage;
+
+------------------------------------Loginpage-------
+
+import React, { useState } from 'react';
+
+const LoginPage = () => {
+  const initialFormState = {
+    username: '',
+    password: '',
+  };
+
+  const [loginFormValues, setLoginFormValues] = useState(initialFormState);
+  const [registeredUsers, setRegisteredUsers] = useState(
+    JSON.parse(localStorage.getItem('registeredUsers')) || []
+  );
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLoginChange = (e) => {
+    const { name, value } = e.target;
+    setLoginFormValues({ ...loginFormValues, [name]: value });
+  };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const foundUser = registeredUsers.find(
+      (user) =>
+        user.username === loginFormValues.username && user.password === loginFormValues.password
+    );
+    if (foundUser) {
+      setIsLoggedIn(true);
+      alert('Login successful!');
+    } else {
+      alert('Invalid credentials. Please try again.');
+    }
+  };
+
+  return (
+    <div>
+      {isLoggedIn ? (
+        <h2>Welcome, {loginFormValues.username}!</h2>
+      ) : (
+        <div>
+          <h2>Login</h2>
+          <form onSubmit={handleLogin}>
+            <input
+              type="text"
+              placeholder="Username"
+              name="username"
+              value={loginFormValues.username}
+              onChange={handleLoginChange}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              value={loginFormValues.password}
+              onChange={handleLoginChange}
+            />
+            <button type="submit">Login</button>
+          </form>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default LoginPage;
+
+
